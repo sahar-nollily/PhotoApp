@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/photoListFragment">
+
+    <fragment
+        android:id="@+id/photoListFragment"
+        android:name="com.bignerdranch.android.photoapp.PhotoListFragment"
+        android:label="Photos"
+        tools:layout="@layout/fragment_photo_list" >
+        <action
+            android:id="@+id/action_photoListFragment_to_addPhotoFragment"
+            app:destination="@id/addPhotoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPhotoFragment"
+        android:name="com.bignerdranch.android.photoapp.AddPhotoFragment"
+        android:label="Add Photo"
+        tools:layout="@layout/fragment_add_photo" >
+        <argument
+            android:name="Photo"
+            app:argType="com.bignerdranch.android.photoapp.database.Photo" />
+        <action
+            android:id="@+id/action_addPhotoFragment_to_photoListFragment"
+            app:destination="@id/photoListFragment" />
+    </fragment>
+</navigation>
